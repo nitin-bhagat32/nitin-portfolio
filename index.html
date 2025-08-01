@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitin | Data Analyst</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #ddd;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 6rem 2rem;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero h1 span {
+      color: #ff2e88;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 1.125rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .hero-buttons a {
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      color: #fff;
+      background: linear-gradient(135deg, #7f00ff, #e100ff);
+      border: none;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hero-buttons a:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #6a00ff, #ff00e0);
+    }
+
+    /* NAV BAR BASE */
+    nav {
+      background-color: #1a1a1a;
+      border-bottom: 1px solid #2c2c2c;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    /* NAV LINKS BASE STYLE */
+    nav .nav-link {
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      position: relative;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    nav .nav-link:hover {
+      color: #60a5fa;
+    }
+
+    /* ACTIVE LINK */
+    nav .nav-link.active,
+    nav .nav-link:focus {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* UNDERLINE EFFECT */
+    nav .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: #38bdf8;
+      transition: width 0.3s ease;
+    }
+
+    nav .nav-link:hover::after,
+    nav .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger styles */
+    #menu-btn {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger-icon {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger-icon.open {
+      transform: rotate(90deg);
+    }
+
+    /* Mobile menu animation */
+    #nav-links {
+      transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+      overflow: hidden;
+    }
+
+    #nav-links.closed {
+      max-height: 0;
+      opacity: 0;
+    }
+
+    #nav-links.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    /* Mobile nav link hover */
+    #nav-links a {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    section h2 {
+      color: #ff2e88;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    .profile-img {
+      width: 320px;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(255, 46, 136, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #2c2c2c;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="bg-[#1a1a1a] border-b border-[#2c2c2c] px-6 md:px-20 py-4 sticky top-0 z-50 shadow-md">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-3xl font-bold tracking-wide">
+        <span class="text-blue-400">&lt;</span><span class="text-white">Nitin</span><span
+          class="text-blue-400">/&gt;</span>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <button id="menu-btn" class="text-white text-2xl md:hidden focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Links (Desktop) -->
+      <div class="hidden md:flex gap-6 text-sm md:text-base">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu (Mobile) -->
+    <div id="nav-links" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+      <div class="flex flex-col gap-4 mt-4 text-sm">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="h-[65vh] bg-black text-white flex items-center justify-center px-1">
+    <div class="max-w-3xl text-center">
+      <p class="text-sm tracking-widest text-gray-400 uppercase">Thank you for stopping by!</p>
+      <h1 class="text-5xl font-bold mt-4 leading-tight">
+        Hi, I'm <span class="text-blue-500">Nitin</span>
+      </h1>
+      <p class="mt-3 text-xl text-gray-300 font-semibold">Data Analyst @ Regent Engineers</p>
+      <p class="mt-4 text-base text-gray-400 leading-relaxed">
+        I use data to tell stories and unlock actionable insights. Currently at Regent Engineers, I bring clarity and
+        efficiency through analytics.
+      </p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="https://www.linkedin.com/in/nitin-bhagat-6297b8367/" target="_blank"
+          class="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition">LinkedIn</a>
+        <a href="https://github.com/nitin-bhagat32" target="_blank"
+          class="bg-gray-800 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-700 transition">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="bg-[#121212] py-20 px-6 md:px-20 text-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+
+      <!-- LEFT TEXT -->
+      <div class="w-full md:w-1/2 text-left">
+        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-blue-500">Intro</h2>
+
+        <p class="text-base md:text-lg text-gray-300 leading-relaxed">
+          Hello, I’m <span class="font-semibold text-white">Nitin Bhagat</span> — a data analyst with a passion for turning
+          complex information into clear, actionable insights.
+        </p>
+
+        <p class="text-base md:text-lg text-gray-400 leading-relaxed mt-4">
+          Currently pursuing my <span class="text-white font-semibold">MCA from Correspondance</span>,
+          I blend academic knowledge with hands-on experience in data analysis, automation, and reporting.
+        </p>
+
+        <p class="text-base md:text-lg text-gray-300 leading-relaxed mt-4">
+          Skilled in <span class="text-blue-400 font-medium">Python, SQL, Excel, and Power BI</span>,
+          I help businesses uncover patterns, drive smarter decisions, and present stories that data tells — all with
+          precision and clarity.
+        </p>
+
+        <p class="text-base md:text-lg text-gray-400 leading-relaxed mt-4">
+          From cleaning messy spreadsheets to building real-time dashboards, I enjoy solving problems
+          that create real impact.
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE (Hidden on small screens) -->
+      <div class="hidden md:flex w-full md:w-1/2 justify-center">
+        <div class="w-64 h-64 rounded-full border-4 border-blue-500 overflow-hidden shadow-xl">
+          <img src="images/IMG_2121.jpg" alt="Nitin profile" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="bg-[#0e0e0e] py-20 px-6 md:px-20 text-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- Heading -->
+      <h2 class="text-2xl md:text-4xl font-bold mb-10 text-blue-500 text-center md:text-left">
+        Education
+      </h2>
+
+      <!-- Education Table -->
+      <div class="w-full px-4">
+        <div class="max-w-3xl mx-auto overflow-x-auto rounded-lg shadow-lg border border-gray-700 mt-8">
+          <table class="w-full text-left text-xs md:text-sm text-gray-300">
+            <thead class="bg-[#1c1c1c] text-blue-400 uppercase tracking-wider text-xs md:text-sm">
+              <tr>
+                <th scope="col" class="px-3 md:px-4 py-2 md:py-3">Course</th>
+                <th scope="col" class="px-3 md:px-4 py-2 md:py-3">Institution</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800">
+              <tr class="hover:bg-[#1a1a1a]">
+                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Masters of Computer Applications (MCA)
+                </td>
+                <td class="px-3 md:px-4 py-2 md:py-3">Indira Gandhi National Open University</td>
+              </tr>
+              <tr class="hover:bg-[#1a1a1a]">
+                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Bachelor of Arts (BA)</td>
+                <td class="px-3 md:px-4 py-2 md:py-3">Indira Gandhi National Open University</td>
+              </tr>
+              <tr class="hover:bg-[#1a1a1a]">
+                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Diploma in Polymer Technology</td>
+                <td class="px-3 md:px-4 py-2 md:py-3">Guru Nanak Dev Institute of Technology</td>
+              </tr>
+              <tr class="hover:bg-[#1a1a1a]">
+                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Class XII (PCM)</td>
+                <td class="px-3 md:px-4 py-2 md:py-3">Vanasthali Public School</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY I SWITCHED -->
+    <div class="mt-5 px-2 md:px-0 py-2 text-gray-400 text-sm md:text-lg font-light leading-relaxed max-w-4xl mx-auto">
+      <h3 class="text-[#3b82f6] text-lg md:text-xl font-semibold mb-4">Why I Switched?</h3>
+      <p>
+        Although I was from a polymer science background, my curiosity always leaned toward technology.
+        While studying, I found myself more excited by spreadsheets than labs — more thrilled by solving
+        real-world problems with data than chemical equations.
+        I started exploring Excel, then SQL and Python, and eventually got hooked on analytics.
+        Now, with an MCA in progress, I'm combining tech with logic to do what I like to do!
+      </p>
+    </div>
+  </section>
+
+
+
+  <!-- WHY SHOULD YOU HIRE ME -->
+  <section class="bg-[#121212] py-14 px-4 sm:px-6 md:px-20 text-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- HEADING -->
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-500 text-left">
+        Why Should You Hire Me?
+      </h2>
+
+      <!-- REASONS + SKILLS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm sm:text-base md:text-[17px] text-gray-300">
+        <!-- BULLET REASONS -->
+        <ul class="space-y-3 list-disc list-inside leading-relaxed">
+          <li><span class="text-white font-semibold">Quick Learner</span> – I adapt fast and love mastering new tools.
+          </li>
+          <li><span class="text-white font-semibold">2.5+ Years Experience</span> – Solid hands-on project & dashboard
+            experience.</li>
+          <li><span class="text-white font-semibold">Problem Solver</span> – I simplify messy data into insights.</li>
+          <li><span class="text-white font-semibold">Consistent Explorer</span> – I learn, build, and grow every day.
+          </li>
+          <li><span class="text-white font-semibold">Strong Communicator</span> – Numbers speak louder when the
+            story’s clear.</li>
+        </ul>
+
+        <!-- SKILLS PILL FORMAT -->
+        <div class="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm">
+          <span class="bg-[#1e293b] text-lime-400 px-4 py-2 rounded-full flex items-center gap-1 shadow-md"><i
+              class="fas fa-file-excel"></i> Excel</span>
+          <span class="bg-[#1e293b] text-teal-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-table"></i> PivotTables</span>
+          <span class="bg-[#1e293b] text-green-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="devicon-postgresql-plain"></i> SQL</span>
+          <span class="bg-[#1e293b] text-yellow-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-chart-bar"></i> Power BI</span>
+          <span class="bg-[#1e293b] text-pink-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-random"></i> Power Query</span>
+          <span class="bg-[#1e293b] text-indigo-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-code-branch"></i> DAX</span>
+          <span class="bg-[#1e293b] text-blue-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="devicon-python-plain"></i> Python</span>
+          <span class="bg-[#1e293b] text-purple-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="devicon-pandas-original"></i> Pandas</span>
+          <span class="bg-[#1e293b] text-red-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="devicon-numpy-original"></i> NumPy</span>
+          <span class="bg-[#1e293b] text-emerald-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-search"></i> EDA</span>
+          <span class="bg-[#1e293b] text-orange-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
+              class="fas fa-desktop"></i> Dashboarding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY TECH STACK -->
+  <section class="bg-[#121212] py-2 px-4 sm:px-6 md:px-20 text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-blue-300">My Tech Stack</h2>
+
+      <!-- Logo Skills Grid -->
+      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+        <!-- Repeatable Logo Block -->
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            Python
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            MySQL
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI" class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            Power BI
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            Excel
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            Pandas
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            NumPy
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            Jupyter
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            HTML
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            CSS
+          </div>
+        </div>
+
+        <div class="group relative">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"
+            class="w-8 h-8 sm:w-10 sm:h-10">
+          <div
+            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
+            VS Code
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <footer>
+    © 2025 Nitin Bhagat. All rights reserved.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const icon = menuBtn.querySelector('i');
+
+    let isOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        navLinks.classList.remove('max-h-0', 'opacity-0');
+        navLinks.classList.add('max-h-96', 'opacity-100');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        navLinks.classList.remove('max-h-96', 'opacity-100');
+        navLinks.classList.add('max-h-0', 'opacity-0');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>
