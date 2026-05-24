@@ -50,6 +50,19 @@
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
             transform: translateY(-2px);
         }
+
+        input,
+        textarea {
+            background: #161616;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
     </style>
 </head>
 
@@ -99,39 +112,68 @@
                 <!-- SUBTITLE -->
                 <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
 
-                    My resume is shared only with genuine recruiters,
-                    hiring managers, and professionals.
-
-                    <br><br>
-
-                    Please connect with me through LinkedIn or email
-                    for resume access.
+                    Please enter your professional details below.
+                    A pre-written email request will open automatically.
 
                 </p>
 
             </div>
 
-            <!-- BUTTONS -->
-            <div class="flex flex-col md:flex-row justify-center gap-6 mt-12">
+            <!-- FORM -->
+            <div class="max-w-2xl mx-auto mt-12 space-y-6">
 
-                <!-- LINKEDIN -->
-                <a href="https://www.linkedin.com/in/nitin-bhagat-6297b8367/"
-                    target="_blank"
-                    class="btn-glow bg-blue-600 hover:bg-blue-700 transition duration-300 px-8 py-4 rounded-2xl text-lg font-semibold text-center">
+                <!-- Recruiter Name -->
+                <div>
+                    <label class="block mb-2 text-gray-300">
+                        Recruiter Name
+                    </label>
 
-                    <i class="fab fa-linkedin mr-2"></i>
-                    Connect on LinkedIn
+                    <input
+                        type="text"
+                        id="recruiterName"
+                        placeholder="John Smith"
+                        class="w-full p-4 rounded-xl">
+                </div>
 
-                </a>
+                <!-- Company -->
+                <div>
+                    <label class="block mb-2 text-gray-300">
+                        Company Name
+                    </label>
 
-                <!-- EMAIL -->
-                <a href="mailto:ntnkmr6969@gmail.com"
-                    class="btn-glow bg-gray-800 hover:bg-gray-700 transition duration-300 px-8 py-4 rounded-2xl text-lg font-semibold text-center">
+                    <input
+                        type="text"
+                        id="companyName"
+                        placeholder="Google, Amazon, Deloitte..."
+                        class="w-full p-4 rounded-xl">
+                </div>
 
-                    <i class="fas fa-envelope mr-2"></i>
-                    Request via Email
+                <!-- Recruiter Email -->
+                <div>
+                    <label class="block mb-2 text-gray-300">
+                        Official Work Email
+                    </label>
 
-                </a>
+                    <input
+                        type="email"
+                        id="recruiterEmail"
+                        placeholder="john@company.com"
+                        class="w-full p-4 rounded-xl">
+                </div>
+
+                <!-- BUTTON -->
+                <div class="text-center pt-4">
+
+                    <button
+                        onclick="sendMail()"
+                        class="btn-glow bg-blue-600 hover:bg-blue-700 transition duration-300 px-10 py-4 rounded-2xl text-lg font-semibold">
+
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Request Resume
+
+                    </button>
+
+                </div>
 
             </div>
 
@@ -155,6 +197,37 @@
 
     </footer>
 
-</body>
+    <!-- SCRIPT -->
+    <script>
 
+        function sendMail() {
+
+            const recruiterName = document.getElementById("recruiterName").value;
+            const companyName = document.getElementById("companyName").value;
+            const recruiterEmail = document.getElementById("recruiterEmail").value;
+
+            const subject = "Request for Resume – Data Analyst Opportunity";
+
+            const body =
+`Hi Nitin,
+
+I came across your portfolio and would like to request your resume for a potential opportunity.
+
+Recruiter Name: ${recruiterName}
+Company: ${companyName}
+Official Email: ${recruiterEmail}
+
+Please share your latest resume when convenient.
+
+Best regards,
+${recruiterName}
+${companyName}`;
+
+            window.location.href =
+                `mailto:ntnkmr6969@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        }
+
+    </script>
+</body>
 </html>
